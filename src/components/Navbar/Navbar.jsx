@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProfileInfo from "../cards/ProfileInfo";
+import ProfileInfo from "../Cards/ProfileInfo";
 import { useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import { HiMenu, HiX, HiArrowLeft } from "react-icons/hi";
@@ -41,7 +41,8 @@ const Navbar = ({ onSearchNote, userInfo, handleCloseSearch }) => {
     setIsSearching(false); // ✅ Show Logo again
   };
 
-  const hideNavItems = location.pathname === "/login" || location.pathname === "/signup";
+  const hideNavItems =
+    location.pathname === "/login" || location.pathname === "/signup";
 
   return (
     <nav className="bg-white flex items-center justify-between  px-6 py-4 shadow-md w-full relative">
@@ -69,7 +70,10 @@ const Navbar = ({ onSearchNote, userInfo, handleCloseSearch }) => {
 
       {/* Mobile & Tablet Menu Button */}
       {!hideNavItems && isMobile && (
-        <button className="lg:hidden text-2xl text-black" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button
+          className="lg:hidden text-2xl text-black"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
       )}
