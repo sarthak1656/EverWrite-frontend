@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://everwrite-backend.onrender.com", // ✅ Correct backend URL
+  baseURL: "https://everwrite-backend.onrender.com", // ✅ Correct Backend URL
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true, // 🔥 Important for cookies/auth
+  withCredentials: true, // ✅ Ensure credentials are included
 });
 
-// Add token to requests if available
+// 🔥 Add token to headers
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
