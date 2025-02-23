@@ -1,10 +1,11 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://everwrite-backend.onrender.com", // Ensure correct backend URL
+  baseURL: "https://everwrite-backend.onrender.com", // ✅ Correct backend URL
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true, // 🔥 Important for cookies/auth
 });
 
 // Add token to requests if available
